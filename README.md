@@ -1,92 +1,93 @@
-# Lab21 — Strategy Pattern + Factory Method (Variant 7: Cloud Storage)
+# Lab21 — Strategy Pattern + Factory Method (Варіант 7: Cloud Storage)
 
-## 📌 Overview
+## 📌 Опис
 
-This project demonstrates the use of the **Strategy Pattern**, **Factory Method Pattern**, and the **Open/Closed Principle (OCP)** in C#.
+У цій лабораторній роботі реалізовано систему розрахунку вартості хмарного сховища (Cloud Storage) з використанням шаблонів проектування Strategy та Factory Method, а також з дотриманням принципу Open/Closed Principle (OCP).
 
-The application calculates service costs for a **Cloud Storage system (Variant 7)** using different pricing strategies.
-
-Language: C#  
-Platform: .NET  
-Project type: Console Application  
+Мова програмування: C#  
+Платформа: .NET  
+Тип проекту: Console Application  
 
 ---
 
-## 🎯 Goal
+## 🎯 Мета роботи
 
-The goal of this lab is to learn how to:
+Мета роботи — навчитися застосовувати:
 
-- Implement the Strategy Pattern
-- Implement the Factory Method Pattern
-- Apply the Open/Closed Principle (OCP)
-- Build a flexible and extensible system
+- Strategy Pattern  
+- Factory Method Pattern  
+- Open/Closed Principle (OCP)  
+
+для створення гнучкої та розширюваної системи.
 
 ---
 
 ## 🧠 Strategy Pattern
 
-The Strategy Pattern allows defining different algorithms and selecting them at runtime.
+Strategy Pattern дозволяє визначити сімейство алгоритмів та використовувати їх взаємозамінно.
 
-Interface:
+Було створено інтерфейс:
 
 ```
 ICloudPlanStrategy
 ```
 
-Implementations:
+та його реалізації:
 
-- PersonalPlan
-- BusinessPlan
-- EnterprisePlan
+- PersonalPlan  
+- BusinessPlan  
+- EnterprisePlan  
 
-Each plan calculates the monthly cost using its own logic.
+Кожен план має власний алгоритм розрахунку вартості.
 
 ---
 
 ## 🏭 Factory Method Pattern
 
-Factory Method is used to create the appropriate strategy object.
+Factory Method використовується для створення об’єкта відповідної стратегії.
 
-Class:
+Було створено клас:
 
 ```
 CloudPlanFactory
 ```
 
-Method:
+з методом:
 
 ```
 CreatePlan(string planType)
 ```
 
-This allows creating objects without specifying the exact class in the main program.
+Фабрика створює відповідний план на основі введення користувача.
 
 ---
 
-## ⚙ Service Layer
+## ⚙ Service клас
 
-Class:
+Було створено клас:
 
 ```
 CloudStorageService
 ```
 
-This class calculates the cost using the selected strategy.
+який використовує Strategy Pattern для розрахунку вартості.
 
-It depends only on the interface, not on concrete implementations.
+Сервіс працює через інтерфейс, що відповідає принципу OCP.
 
 ---
 
 ## 🧩 Open/Closed Principle (OCP)
 
-The system follows OCP:
+Програма відповідає принципу відкритості/закритості:
 
-- Open for extension (new plans can be added)
-- Closed for modification (existing code does not need to change)
+- відкрита для розширення
+- закрита для модифікації
+
+Нові плани можна додавати без зміни існуючого коду.
 
 ---
 
-## 📁 Project Structure
+## 📁 Структура проекту
 
 ```
 lab21
@@ -109,40 +110,39 @@ lab21
 
 ---
 
-## ▶ Example Run
+## ▶ Приклад роботи програми
 
 ```
-Choose system:
+Виберіть систему:
 2 - Cloud Storage
 
-Enter plan: business
-Enter storage (GB): 100
-Enter users: 5
+Введіть план: business
+Введіть обсяг (GB): 100
+Введіть кількість користувачів: 5
 
-Monthly cost: 40
+Місячна вартість: 40
 ```
 
 ---
 
-## ✅ Features
+## ✅ Результат
 
-- Strategy Pattern implementation
-- Factory Method Pattern implementation
-- Open/Closed Principle compliance
-- Clean architecture
-- Easy to extend
-- Console interface
+У лабораторній роботі було реалізовано:
+
+- Strategy Pattern  
+- Factory Method Pattern  
+- Open/Closed Principle  
+- Гнучку та розширювану архітектуру  
 
 ---
 
-## 👩‍💻 Author
+## 👩‍💻 Посилання на GitHub
 
-GitHub Repository:  
 https://github.com/Evelina674/lab21
 
 ---
 
-## 📌 Conclusion
+## 📌 Висновок
 
-This lab successfully demonstrates how to use Strategy and Factory Method patterns in a real-world scenario.  
-The system is flexible, maintainable, and follows SOLID principles.
+У ході лабораторної роботи було успішно реалізовано шаблони Strategy та Factory Method.  
+Система має гнучку архітектуру, відповідає принципу OCP та легко розширюється новими стратегіями.
